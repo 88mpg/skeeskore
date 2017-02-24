@@ -69,12 +69,9 @@
 
 	scoreButtons.forEach(hole => {
 		hole.addEventListener('click', tallyScore);
-    hole.addEventListener('touchstart', tallyScore);
 		hole.addEventListener('click', ballCounter);
-    hole.addEventListener('touchstart', ballCounter);
 	});
 
   document.addEventListener('click', resetGame);
-  document.addEventListener('touch', resetGame);
 
 })(window, document);
