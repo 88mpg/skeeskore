@@ -45,3 +45,38 @@ ellipse {
 [data-score]:hover {
 	fill:tomato;
 }
+
+.results {
+  background: gold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: calc(100vw - 40px);
+  z-index: 3;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  background: tomato;
+  color: white;
+  padding: 15px 50px;
+  margin-top: 15px;
+  font-size: 1em;
+  font-family: monospace;
+  outline: 0;
+}
+
+.reset:active,
+.reset:hover {
+  background-color: #a81900;
+  cursor: pointer;
+}

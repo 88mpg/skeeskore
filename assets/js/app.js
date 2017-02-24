@@ -13,6 +13,7 @@
 	let highFive = true;
 
 	function ballCounter() {
+    // TODO: convert to balls left
 		if (ballCount < 9) {
 			ballCount++;
 			countContainer.textContent = ballCount;
@@ -37,26 +38,43 @@
 		}
 	}
 
+  function resetGame(e) {
+    // lazy!
+    if (e.target.id == 'resetButton') location.reload();
+
+    // reset variables
+    // remove results container
+  }
+
 	function gameOver() {
-		const gameOver = document.createElement('p');
+		const gameOver = document.createElement('section');
+    gameOver.classList.add('results');
 		gameOver.innerHTML = `<p>All done! You scored ${scoreTotal}</p>`;
-		document.body.appendChild(gameOver);
 
 		// TODO: refactor achievement title as variable
 		if (fullCircle) gameOver.innerHTML += '<p>Congratulations! You scored a FULL CIRCLE!</p>';
 		// if (cherry) gameOver.innerHTML += '<p>Congratulations! You scored a CHERRY!</p>';
 		if (highFive) gameOver.innerHTML += '<p>Congratulations! You scored a HIGH FIVE!</p>';
 		if (!cherry && !highFive && scoreTotal >=370 && scoreTotal <= 450) gameOver.innerHTML += '<p>Congratulations! You scored a CHIP!</p>';
-		if (scoreTotal >= 460) gameOver.innerHTML += '<p>Congratulations! You scored a FISH!';
+		if (scoreTotal >= 460) gameOver.innerHTML += '<p>Congratulations! You scored a FISH!</p>';
 		if (scoreTotal === 900) gameOver.innerHTML += '<p>Holy shit! You scored a PERFECT FRAME!</p>'
-		if (scoreTotal === 90) gameOver.innerHTML += '<p>Oh no! You scored a RIGHT ANGLE!';
-		if (scoreTotal === 80) gameOver.innerHTML += '<p>Oh no! You scored a SNOWMAN!';
+		if (scoreTotal === 90) gameOver.innerHTML += '<p>Oh no! You scored a RIGHT ANGLE!</p>';
+		if (scoreTotal === 80) gameOver.innerHTML += '<p>Oh no! You scored a SNOWMAN!</p>';
 		if (hundos > 0) gameOver.innerHTML += `<p>Congratulations! You scored ${hundos} hundos!</p>`;
+
+    gameOver.innerHTML += '<button id="resetButton" class="reset" href="#">Reset</button>';
+
+    document.body.appendChild(gameOver);
 	}
 
 	scoreButtons.forEach(hole => {
 		hole.addEventListener('click', tallyScore);
+    hole.addEventListener('touchstart', tallyScore);
 		hole.addEventListener('click', ballCounter);
+    hole.addEventListener('touchstart', ballCounter);
 	});
+
+  document.addEventListener('click', resetGame);
+  document.addEventListener('touch', resetGame);
 
 })(window, document);
