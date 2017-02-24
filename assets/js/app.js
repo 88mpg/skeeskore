@@ -48,7 +48,7 @@
 		if (highFive) gameOver.innerHTML += '<p>Congratulations! You scored a HIGH FIVE!</p>';
 		if (!cherry && !highFive && scoreTotal >=370 && scoreTotal <= 450) gameOver.innerHTML += '<p>Congratulations! You scored a CHIP!</p>';
 		if (scoreTotal >= 460) gameOver.innerHTML += '<p>Congratulations! You scored a FISH!';
-		if (scoreTotal === 900) gameOver.innerHTML += '<p>Congratulations! You scored a PERFECT FRAME!</p>'
+		if (scoreTotal === 900) gameOver.innerHTML += '<p>Holy shit! You scored a PERFECT FRAME!</p>'
 		if (scoreTotal === 90) gameOver.innerHTML += '<p>Oh no! You scored a RIGHT ANGLE!';
 		if (scoreTotal === 80) gameOver.innerHTML += '<p>Oh no! You scored a SNOWMAN!';
 		if (hundos > 0) gameOver.innerHTML += `<p>Congratulations! You scored ${hundos} hundos!</p>`;
@@ -57,6 +57,7 @@
 	scoreButtons.forEach(hole => {
 		hole.addEventListener('click', tallyScore);
 		hole.addEventListener('click', ballCounter);
+		hole.addEventListener('mousedown', console.log('down'));
 	});
 
 })(window, document);
