@@ -2,59 +2,38 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
 	<title>Skeeskore!</title>
 	<link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
+
 	<div class="container">
-		<span class="score">SCORE: <span class="score--number">0</span></span>
-		<span class="count">BALL#: <span class="count--number">1</span></span>
-		<br/><br/>
-		<!-- <div class="first-row">
-			<button class="hundred" data-score="100">100</button>
-			<button class="fifty" data-score="50">50</button>
-			<button class="hundred" data-score="100">100</button>
-		</div>
-		<div class="second-row">
-			<button class="forty" data-score="40">40</button>
-		</div>
-		<div class="third-row">
-			<button class="thirty" data-score="30">30</button>
-		</div>
-		<div class="fourth-row">
-			<button class="twenty" data-score="20">20</button>
-		</div>
-		<div class="fifth-row">
-			<button class="ten" data-score="10">10</button>
-		</div>
-		<div class="sixth-row">
-			<button class="zero" data-score="0">0</button>
-		</div>
-	</div> -->
 
-	<svg width="407" height="532" xmlns="http://www.w3.org/2000/svg">
-	 <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+		<section class="scoreboard">
+			<span class="score">SCORE: <span class="score--number">0</span></span>
+			<span class="count">BALL#: <span class="count--number">1</span></span>
+		</section>
 
-		<ellipse data-score="50" ry="44.5" rx="44.5" id="svg_2" cy="51.500002" cx="203.499996" fill-opacity="null" stroke-opacity="null" stroke-width="14" stroke="#000" fill="white"/>
-	  <ellipse data-score="100" stroke="#000" ry="31.5" rx="31.5" id="svg_3" cy="45.500001" cx="368.499997" fill-opacity="null" stroke-opacity="null" stroke-width="14" fill="white"/>
-	  <ellipse data-score="100" stroke="#000" ry="31.5" rx="31.5" id="svg_5" cy="45.500001" cx="38.499997" fill-opacity="null" stroke-opacity="null" stroke-width="14" fill="white"/>
-	  <ellipse stroke="#000" ry="158.500001" rx="158.500001" id="svg_8" cy="264.750004" cx="203.500001" fill-opacity="null" stroke-opacity="null" stroke-width="14" fill="#45bf41"/>
-	  <ellipse data-score="30" ry="44.5" rx="44.5" id="svg_6" cy="263.500002" cx="203.499996" fill-opacity="null" stroke-opacity="null" stroke-width="14" stroke="#000" fill="white"/>
-	  <ellipse data-score="40" ry="44.5" rx="44.5" id="svg_7" cy="161.500002" cx="203.499996" fill-opacity="null" stroke-opacity="null" stroke-width="14" stroke="#000" fill="white"/>
-	  <ellipse data-score="20" ry="44.5" rx="44.5" id="svg_9" cy="365.500002" cx="203.499996" fill-opacity="null" stroke-opacity="null" stroke-width="14" stroke="#000" fill="white"/>
-	  <ellipse data-score="10" ry="44.5" rx="44.5" id="svg_10" cy="480.500002" cx="203.499996" fill-opacity="null" stroke-opacity="null" stroke-width="14" stroke="#000" fill="white"/>
-	 </g>
-	</svg>
+    <section class="holes">
+  		<svg viewBox="0 0 407 532">
+  			<ellipse data-score="50" ry="44.5" rx="44.5" cy="51.5" cx="203.5"/>
+  			<ellipse data-score="100" ry="31.5" rx="31.5" cy="45.5" cx="368.5"/>
+  			<ellipse data-score="100" ry="31.5" rx="31.5" cy="45.5" cx="38.5"/>
+  			<ellipse fill="limegreen" ry="158.5" rx="158.5" cy="264.75" cx="203.5"/>
+  			<ellipse data-score="30" ry="44.5" rx="44.5" cy="263.5" cx="203.5"/>
+  			<ellipse data-score="40" ry="44.5" rx="44.5" cy="161.5" cx="203.5"/>
+  			<ellipse data-score="20" ry="44.5" rx="44.5" cy="365.5" cx="203.5"/>
+  			<ellipse data-score="10" ry="44.5" rx="44.5"cy="480.5" cx="203.5"/>
+  		</svg>
+    </section>
 
-	<script src="assets/js/app.js" charset="utf-8"></script>
-	<script>
-		var x = document.querySelectorAll('[data-score]');
-		function worked() {
-			console.log(parseInt(this.getAttribute('data-score')));
-		}
-		x.forEach(x => x.addEventListener('click', worked));
-		// x.addEventListener('click', worked);
-	</script>
+</div>
+
+<script src="assets/js/app.js" charset="utf-8"></script>
+
 </body>
 </html>
