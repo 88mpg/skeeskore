@@ -57,7 +57,6 @@
 	scoreButtons.forEach(hole => {
 		hole.addEventListener('click', tallyScore);
 		hole.addEventListener('click', ballCounter);
-		hole.addEventListener('mousedown', console.log('down'));
 	});
 
 })(window, document);

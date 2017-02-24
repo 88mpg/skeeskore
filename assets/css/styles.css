@@ -5,6 +5,7 @@ body {
 	font-size: 22px;
 	margin: 0;
 	padding: 10px;
+	user-select: none;
 }
 
 .container {
@@ -15,25 +16,27 @@ body {
 }
 
 .scoreboard {
-	background: tomato;
-}
-
-.count,
-.score {
-	display: inline-block;
-	height: 30px;
-}
-
-.score {
-	float: left;
-}
-.count {
-	float: right;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	padding: 10px;
 }
 
 svg {
-	max-height: calc(100vh - 50px);
+	max-height: calc(100vh - 90px);
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-[data-score]:active {
+
+ellipse {
+	stroke: black;
+	stroke-width: 14px;
+}
+
+[data-score] {
+	fill: cornsilk;
+}
+
+[data-score]:active,
+[data-score]:hover {
 	fill:tomato;
 }

@@ -2,32 +2,36 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<title>Skeeskore!</title>
 	<link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
+
 	<div class="container">
 
-		<div class="scoreboard">
+		<section class="scoreboard">
 			<span class="score">SCORE: <span class="score--number">0</span></span>
 			<span class="count">BALL#: <span class="count--number">1</span></span>
-		</div>
+		</section>
 
-	<svg viewBox="0 0 407 532" xmlns="http://www.w3.org/2000/svg">
-		<ellipse data-score="50" ry="44.5" rx="44.5" id="svg_2" cy="51.500002" cx="203.499996" fill-opacity="null" stroke-opacity="null" stroke-width="14" stroke="#000" fill="white"/>
-	  <ellipse data-score="100" stroke="#000" ry="31.5" rx="31.5" id="svg_3" cy="45.500001" cx="368.499997" fill-opacity="null" stroke-opacity="null" stroke-width="14" fill="white"/>
-	  <ellipse data-score="100" stroke="#000" ry="31.5" rx="31.5" id="svg_5" cy="45.500001" cx="38.499997" fill-opacity="null" stroke-opacity="null" stroke-width="14" fill="white"/>
-	  <ellipse stroke="#000" ry="158.500001" rx="158.500001" id="svg_8" cy="264.750004" cx="203.500001" fill-opacity="null" stroke-opacity="null" stroke-width="14" fill="#45bf41"/>
-	  <ellipse data-score="30" ry="44.5" rx="44.5" id="svg_6" cy="263.500002" cx="203.499996" fill-opacity="null" stroke-opacity="null" stroke-width="14" stroke="#000" fill="white"/>
-	  <ellipse data-score="40" ry="44.5" rx="44.5" id="svg_7" cy="161.500002" cx="203.499996" fill-opacity="null" stroke-opacity="null" stroke-width="14" stroke="#000" fill="white"/>
-	  <ellipse data-score="20" ry="44.5" rx="44.5" id="svg_9" cy="365.500002" cx="203.499996" fill-opacity="null" stroke-opacity="null" stroke-width="14" stroke="#000" fill="white"/>
-	  <ellipse data-score="10" ry="44.5" rx="44.5" id="svg_10" cy="480.500002" cx="203.499996" fill-opacity="null" stroke-opacity="null" stroke-width="14" stroke="#000" fill="white"/>
-	</svg>
+    <section class="holes">
+  		<svg viewBox="0 0 407 532">
+  			<ellipse data-score="50" ry="44.5" rx="44.5" cy="51.5" cx="203.5"/>
+  			<ellipse data-score="100" ry="31.5" rx="31.5" cy="45.5" cx="368.5"/>
+  			<ellipse data-score="100" ry="31.5" rx="31.5" cy="45.5" cx="38.5"/>
+  			<ellipse fill="limegreen" ry="158.5" rx="158.5" cy="264.75" cx="203.5"/>
+  			<ellipse data-score="30" ry="44.5" rx="44.5" cy="263.5" cx="203.5"/>
+  			<ellipse data-score="40" ry="44.5" rx="44.5" cy="161.5" cx="203.5"/>
+  			<ellipse data-score="20" ry="44.5" rx="44.5" cy="365.5" cx="203.5"/>
+  			<ellipse data-score="10" ry="44.5" rx="44.5"cy="480.5" cx="203.5"/>
+  		</svg>
+    </section>
 
-	<script src="assets/js/app.js" charset="utf-8"></script>
 </div>
+
+<script src="assets/js/app.js" charset="utf-8"></script>
 
 </body>
 </html>
