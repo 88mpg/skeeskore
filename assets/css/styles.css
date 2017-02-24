@@ -1,20 +1,39 @@
 body {
+	background: gold;
 	font-family: monospace;
 	font-weight: 700;
 	font-size: 22px;
 	margin: 0;
-	padding: 0;
-}
-.container {
 	padding: 10px;
-	background: gold;
-	max-width: 420px;
 }
 
+.container {
+	max-height: 100vh;
+	max-width: 768px;
+	text-align: center;
+	margin: auto;
+}
+
+.scoreboard {
+	background: tomato;
+}
+
+.count,
+.score {
+	display: inline-block;
+	height: 30px;
+}
+
+.score {
+	float: left;
+}
 .count {
 	float: right;
 }
 
+svg {
+	max-height: calc(100vh - 50px);
+}
 [data-score]:active {
 	fill:tomato;
 }
