@@ -18,13 +18,17 @@
     currentBall.outerHTML = '';
   }
 
+  function updateGame() {
+    removeBall();
+    ballCount--;
+    countContainer.textContent = ballCount;
+  }
+
 	function ballCounter() {
 		if (ballCount <= 9 && ballCount > 1) {
-      removeBall();
-      ballCount--;
-			countContainer.textContent = ballCount;
+      updateGame();
 		} else if (ballCount === 1) {
-			ballCount--;
+			updateGame();
 			gameOver();
 		} else {
 			return false;
@@ -59,7 +63,7 @@
 		// if (cherry) gameOver.innerHTML += '<p>Congratulations! You scored a CHERRY!</p>';
 		if (highFive) gameOver.innerHTML += '<p>Congratulations! You scored a HIGH FIVE!</p>';
 		if (!cherry && !highFive && scoreTotal >=370 && scoreTotal <= 450) gameOver.innerHTML += '<p>Congratulations! You scored a CHIP!</p>';
-		if (scoreTotal >= 460) gameOver.innerHTML += '<p>Congratulations! You scored a FISH!</p>';
+		if (scoreTotal >= 460 && scoreTotal !== 900) gameOver.innerHTML += '<p>Congratulations! You scored a FISH!</p>';
 		if (scoreTotal === 900) gameOver.innerHTML += '<p>Holy shit! You scored a PERFECT FRAME!</p>'
 		if (scoreTotal === 90) gameOver.innerHTML += '<p>Oh no! You scored a RIGHT ANGLE!</p>';
 		if (scoreTotal === 80) gameOver.innerHTML += '<p>Oh no! You scored a SNOWMAN!</p>';
