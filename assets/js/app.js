@@ -78,3 +78,9 @@
   document.addEventListener('touch', resetGame);
 
 })(window, document);
+
+$(function() {
+  $('.container').on('click tap', function() {
+    alert('yay');
+  });
+});
