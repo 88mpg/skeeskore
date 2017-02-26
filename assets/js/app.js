@@ -5,20 +5,26 @@
 	const countContainer = document.querySelector('.count--number');
 	const scoreContainer = document.querySelector('.score--number');
 	const scoreButtons = document.querySelectorAll('[data-score]');
-	let ballCount = 1;
+
+	let ballCount = 9;
 	let scoreTotal = 0;
 	let hundos = 0;
 	let fullCircle = true;
 	let cherry = true;
 	let highFive = true;
 
+  function removeBall() {
+    let currentBall = document.querySelector('.ball-count-'+ballCount);
+    currentBall.outerHTML = '';
+  }
+
 	function ballCounter() {
-    // TODO: convert to balls left
-		if (ballCount < 9) {
-			ballCount++;
+		if (ballCount <= 9 && ballCount > 1) {
+      removeBall();
+      ballCount--;
 			countContainer.textContent = ballCount;
-		} else if (ballCount === 9) {
-			ballCount++;
+		} else if (ballCount === 1) {
+			ballCount--;
 			gameOver();
 		} else {
 			return false;
@@ -27,7 +33,7 @@
 
 	function tallyScore() {
 		let rollScore = parseInt(this.getAttribute('data-score'));
-		if (ballCount <= 9) {
+		if (ballCount >= 1) {
 			scoreTotal = scoreTotal + rollScore;
 			scoreContainer.textContent = scoreTotal;
 			if (rollScore === 100) hundos++;
@@ -41,9 +47,6 @@
   function resetGame(e) {
     // lazy!
     if (e.target.id == 'resetButton') location.reload();
-
-    // reset variables
-    // remove results container
   }
 
 	function gameOver() {

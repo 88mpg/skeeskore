@@ -13,6 +13,7 @@ body {
 	max-width: 768px;
 	text-align: center;
 	margin: auto;
+  position: relative;
 }
 
 .scoreboard {
@@ -27,12 +28,12 @@ p {
   margin: 0;
 }
 
-svg {
+.holes svg {
 	max-height: calc(100vh - 90px);
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-ellipse {
+.holes ellipse {
 	stroke: black;
 	stroke-width: 14px;
 }
@@ -79,4 +80,18 @@ ellipse {
 .reset:hover {
   background-color: #a81900;
   cursor: pointer;
+}
+
+.remaining-balls svg {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  max-width: 35px;
+  z-index: -1;
+}
+
+ellipse[class^='ball-count'] {
+  fill: tomato;
+  stroke: black;
+  stroke-width: 10px;
 }

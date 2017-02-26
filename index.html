@@ -15,11 +15,11 @@
 
 		<section class="scoreboard">
 			<span class="score">SCORE: <span class="score--number">0</span></span>
-			<span class="count">BALL#: <span class="count--number">1</span></span>
+			<span class="count">BALLS LEFT: <span class="count--number">9</span></span>
 		</section>
 
     <section class="holes">
-  		<svg viewBox="0 0 407 532">
+  		<svg id="skeeball" viewBox="0 0 407 532">
   			<ellipse data-score="50" ry="44.5" rx="44.5" cy="51.5" cx="203.5"/>
   			<ellipse data-score="100" ry="31.5" rx="31.5" cy="45.5" cx="368.5"/>
   			<ellipse data-score="100" ry="31.5" rx="31.5" cy="45.5" cx="38.5"/>
@@ -31,6 +31,20 @@
   		</svg>
     </section>
 
+</div>
+
+<div class="remaining-balls">
+  <svg id="remainingBalls" viewBox="0 0 82 702">
+    <ellipse class="ball-count-9" ry="34.5" rx="34.5" cy="39.500002" cx="39.5"/>
+    <ellipse class="ball-count-8" ry="34.5" rx="34.5" cy="117.589693" cx="39.5"/>
+    <ellipse class="ball-count-7" ry="34.5" rx="34.5" cy="195.500002" cx="39.5"/>
+    <ellipse class="ball-count-6" ry="34.5" rx="34.5" cy="273.589693" cx="39.5"/>
+    <ellipse class="ball-count-5" ry="34.5" rx="34.5" cy="351.500002" cx="39.5"/>
+    <ellipse class="ball-count-4" ry="34.5" rx="34.5" cy="429.589693" cx="39.5"/>
+    <ellipse class="ball-count-3" ry="34.5" rx="34.5" cy="507.500002" cx="39.5"/>
+    <ellipse class="ball-count-2" ry="34.5" rx="34.5" cy="585.589693" cx="39.5"/>
+    <ellipse class="ball-count-1" ry="34.5" rx="34.5" cy="662.589693" cx="39.5"/>
+  </svg>
 </div>
 
 <script src="assets/js/app.js" charset="utf-8"></script>
