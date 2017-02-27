@@ -15,7 +15,7 @@
 
   function removeBall() {
     let currentBall = document.querySelector('.ball-count-'+ballCount);
-    currentBall.outerHTML = '';
+    currentBall.classList.add('js-hidden');
   }
 
   function updateGame() {
