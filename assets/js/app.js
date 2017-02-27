@@ -13,10 +13,11 @@
 	let cherry = true;
 	let highFive = true;
 
+	// testing FastClick
 	if ('addEventListener' in document) {
-	    document.addEventListener('DOMContentLoaded', function() {
-	        FastClick.attach(document.body);
-	    }, false);
+		document.addEventListener('DOMContentLoaded', function() {
+			FastClick.attach(document.body);
+		}, false);
 	}
 
   function removeBall() {
@@ -73,15 +74,16 @@
   function resetGame(e) {
     // lazy!
     if (e.target.id == 'resetButton') {
-      location.reload();
-      // ballCount = 9;
-      // scoreTotal = 0;
-    	// hundos = 0;
-    	// fullCircle = true;
-    	// cherry = true;
-    	// highFive = true;
-      // updateScore();
-      // countContainer.textContent = ballCount;
+			let resultsContainer = document.querySelector('.results');
+      ballCount = 9;
+      scoreTotal = 0;
+    	hundos = 0;
+    	fullCircle = true;
+    	cherry = true;
+    	highFive = true;
+      updateScore();
+      countContainer.textContent = ballCount;
+			document.body.removeChild(resultsContainer);
     };
     if (e.target.id == 'editScore') editScore();
   }
