@@ -13,6 +13,12 @@
 	let cherry = true;
 	let highFive = true;
 
+	if ('addEventListener' in document) {
+	    document.addEventListener('DOMContentLoaded', function() {
+	        FastClick.attach(document.body);
+	    }, false);
+	}
+
   function removeBall() {
     let currentBall = document.querySelector('.ball-count-'+ballCount);
     currentBall.classList.add('js-hidden');

@@ -49,6 +49,7 @@ p {
 }
 
 [data-score] {
+	cursor: pointer;
 	fill: cornsilk;
 }
 
