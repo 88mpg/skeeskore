@@ -35,28 +35,55 @@
 		}
 	}
 
+  function updateScore() {
+    let resultsScoreContainer = document.querySelector('.resultsScoreContainer');
+    // TODO: maybe refactor to use one class
+    scoreContainer.textContent = scoreTotal;
+    if (document.body.contains(resultsScoreContainer)) resultsScoreContainer.textContent = scoreTotal;
+  }
+
 	function tallyScore() {
 		let rollScore = parseInt(this.getAttribute('data-score'));
+
 		if (ballCount >= 1) {
 			scoreTotal = scoreTotal + rollScore;
-			scoreContainer.textContent = scoreTotal;
-			if (rollScore === 100) hundos++;
+
+      if (rollScore === 100) hundos++;
+      // TODO: figure out how to exclude fullCircle and highFive from this
+			// if (rollScore < 40 || rollScore > 50) cherry = false;
 			if (rollScore !== 40) fullCircle = false;
 			if (rollScore !== 50) highFive = false;
-			// TODO: figure out how to exclude fullCircle and highFive from this
-			// if (rollScore < 40 || rollScore > 50) cherry = false;
+
+			updateScore();
 		}
 	}
 
+  function editScore() {
+    let newScore = prompt('What score did you get?', scoreTotal);
+    scoreTotal = newScore;
+    updateScore();
+  }
+
   function resetGame(e) {
     // lazy!
-    if (e.target.id == 'resetButton') location.reload();
+    if (e.target.id == 'resetButton') {
+      location.reload();
+      // ballCount = 9;
+      // scoreTotal = 0;
+    	// hundos = 0;
+    	// fullCircle = true;
+    	// cherry = true;
+    	// highFive = true;
+      // updateScore();
+      // countContainer.textContent = ballCount;
+    };
+    if (e.target.id == 'editScore') editScore();
   }
 
 	function gameOver() {
 		const gameOver = document.createElement('section');
     gameOver.classList.add('results');
-		gameOver.innerHTML = `<p>All done! You scored ${scoreTotal}</p>`;
+		gameOver.innerHTML = `<p>All done! You scored <span class="resultsScoreContainer">${scoreTotal}</p>`;
 
 		// TODO: refactor achievement title as variable
 		if (fullCircle) gameOver.innerHTML += '<p>Congratulations! You scored a FULL CIRCLE!</p>';
@@ -70,6 +97,7 @@
 		if (hundos > 0) gameOver.innerHTML += `<p>Congratulations! You scored ${hundos} hundos!</p>`;
 
     gameOver.innerHTML += '<button id="resetButton" class="reset" href="#">Reset</button>';
+    gameOver.innerHTML += '<a href="#" id="editScore" class="edit" href="#">Wrong score? Click here to edit.</a>';
 
     document.body.appendChild(gameOver);
 	}
