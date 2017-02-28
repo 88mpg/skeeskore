@@ -21,7 +21,7 @@ body {
 
 .container {
 	max-height: 100vh;
-	max-width: 567px;
+	max-width: 561px;
 	text-align: center;
 	margin: auto;
   position: relative;
@@ -31,7 +31,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	padding: 20px;
-	border: 10px solid black;
+	border: 14px solid black;
 	border-bottom: 0;
 }
 

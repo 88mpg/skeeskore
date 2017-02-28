@@ -25,6 +25,13 @@
     currentBall.classList.add('js-hidden');
   }
 
+	function showAllBalls() {
+		let hiddenBalls = document.querySelectorAll('.js-hidden');
+		hiddenBalls.forEach(ball => {
+			ball.classList.remove('js-hidden');
+		});
+	}
+
   function updateGame() {
     removeBall();
     ballCount--;
@@ -66,24 +73,32 @@
 	}
 
   function editScore() {
-    let newScore = prompt('What score did you get?', scoreTotal);
-    scoreTotal = newScore;
-    updateScore();
+		let newScore = prompt('What score did you get?', scoreTotal);
+		if (newScore !== null || newScore % 10 !== 0 || newscore > 900 || newscore < 0) {
+			let newScore = 	prompt('Invalid score! Please submit a score between 0-900 divisble by 10', scoreTotal);
+		} else {
+			scoreTotal = newScore;
+	    updateScore();
+		}
   }
+
+	function defaultValues() {
+		ballCount = 9;
+		scoreTotal = 0;
+		hundos = 0;
+		fullCircle = true;
+		cherry = true;
+		highFive = true;
+	}
 
   function resetGame(e) {
     // lazy!
     if (e.target.id == 'resetButton') {
 			let resultsContainer = document.querySelector('.results');
-      ballCount = 9;
-      scoreTotal = 0;
-    	hundos = 0;
-    	fullCircle = true;
-    	cherry = true;
-    	highFive = true;
+      defaultValues();
       updateScore();
       countContainer.textContent = ballCount;
-			// TODO: reload ball counter
+			showAllBalls();
 			document.body.removeChild(resultsContainer);
     };
     if (e.target.id == 'editScore') editScore();
