@@ -14,11 +14,11 @@
 	let highFive = true;
 
 	// testing FastClick
-	if ('addEventListener' in document) {
-		document.addEventListener('DOMContentLoaded', function() {
-			FastClick.attach(document.body);
-		}, false);
-	}
+	// if ('addEventListener' in document) {
+	// 	document.addEventListener('DOMContentLoaded', function() {
+	// 		FastClick.attach(document.body);
+	// 	}, false);
+	// }
 
   function removeBall() {
     let currentBall = document.querySelector('.ball-count-'+ballCount);
@@ -83,6 +83,7 @@
     	highFive = true;
       updateScore();
       countContainer.textContent = ballCount;
+			// TODO: reload ball counter
 			document.body.removeChild(resultsContainer);
     };
     if (e.target.id == 'editScore') editScore();
